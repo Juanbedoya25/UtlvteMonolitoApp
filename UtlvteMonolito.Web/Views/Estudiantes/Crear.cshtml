@@ -1,0 +1,57 @@
+@model UtlvteMonolito.Web.Models.Estudiante
+@{
+    ViewData["Title"] = "Registrar Estudiante";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Registrar Nuevo Estudiante</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Crear" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Cedula" class="form-label">Cédula</label>
+                            <input asp-for="Cedula" class="form-control" maxlength="10" />
+                            <span asp-validation-for="Cedula" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Nombres" class="form-label">Nombres</label>
+                                <input asp-for="Nombres" class="form-control" />
+                                <span asp-validation-for="Nombres" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Apellidos" class="form-label">Apellidos</label>
+                                <input asp-for="Apellidos" class="form-control" />
+                                <span asp-validation-for="Apellidos" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CorreoInstitucional" class="form-label">Correo Institucional</label>
+                            <input asp-for="CorreoInstitucional" type="email" class="form-control" />
+                            <span asp-validation-for="CorreoInstitucional" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Carrera" class="form-label">Carrera</label>
+                            <input asp-for="Carrera" class="form-control" />
+                            <span asp-validation-for="Carrera" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-secondary">Volver al Listado</a>
+                            <button type="submit" class="btn btn-success">Guardar Estudiante</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
